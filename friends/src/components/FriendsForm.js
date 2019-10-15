@@ -22,9 +22,10 @@ const FriendsForm = props => {
             age: Number(friend.age)
         });
         axiosWithAuth()
-            .post("/friends", localStorage.getItem("token"), friend)
+            .post("/friends", friend)
             .then(res => {
                 console.log(res);
+                props.setFriends(res.data);
             })
             .catch(err => console.log("Error adding friend: ", err));
         setFriend({
@@ -54,7 +55,7 @@ const FriendsForm = props => {
                     />
                 </div>
                 <div className="input">
-                    <label>Name:</label>
+                    <label>Email:</label>
                     <input
                         name="email"
                         value={friend.email}

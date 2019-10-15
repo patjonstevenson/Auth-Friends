@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import axiosWithAuth from "../utilities/axiosWithAuth";
 
 const LoginForm = props => {
@@ -21,8 +22,9 @@ const LoginForm = props => {
             .then(res => {
                 console.log(res);
                 localStorage.setItem("token", res.data.payload);
+                props.history.push("/friends");
             })
-            .catch(err => console.log("Error adding credentials: ", err));
+            .catch(err => console.log("Error submitting credentials: ", err));
     }
 
     return (

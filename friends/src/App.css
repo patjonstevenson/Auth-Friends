@@ -20,3 +20,22 @@
 .App-link {
   color: #09d3ac;
 }
+
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friend {
+  width: 30%;
+  padding: 5%;
+  margin: 2.5%;
+  border: 1px solid black;
+}
+
+.friends-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
+}
